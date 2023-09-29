@@ -1,0 +1,31 @@
+body {
+    background-color: #24283b;
+    color: #9ece6a;
+}
+
+table {
+    width: 60%;
+    height: 50vh;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.fila1 {
+    background-color: #9ece6a;
+    color: #24283b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fila2 {
+    background-color: #565f89;
+}
+
+.subr {
+    background-color: #9ece6a;
+    color: #f7768e;
+}
+
+.izq {
+    text-align: left;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+    <link rel="stylesheet" href="tabla.css" type="text/css">
+</head>
+<body>
+    <div>
+        <table border="2">
+            <tr class="fila1"> <!--filas-->
+                <td colspan="4">Animales en Peligro de extinción</td> <!--Combinar primera fila-->
+            </tr>
+            <tr class="fila2">
+                <td class="izq">Nombre</td>
+                <td>Cabezas</td>
+                <td>Previsiones 2010</td>
+                <td>Previsiones 2020</td>
+            </tr>
+            <tr class="fila3">
+                <td class="izq">Ballena</td>
+                <td>6000</td>
+                <td>4000</td>
+                <td>1500</td>
+            </tr>
+            <tr class="fila3">
+                <td class="izq">Oso Pardo</td>
+                <td>50</td>
+                <td class="subr" colspan="2" rowspan="2">0</td> <!--Combinacion horizontal y vertical-->
+            </tr>
+
+            <tr class="fila3">
+                <td class="izq">Lince</td>
+                <td>0</td>
+            </tr>
+
+            <tr class="fila3">
+                <td class="izq">Tigre</td>
+                <td>300</td>
+                <td colspan="2">210</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
