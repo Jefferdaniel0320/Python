@@ -20,10 +20,10 @@ while nuevaConsulta:
     patronProducto = r"grupopromerica\.com/([^/]+)/"
     # Buscar los valores en la URL usando la expresión regular
     resultadoProducto = re.search(patronProducto, url).group(1)
-
+    
+    print("------------------------------")    
     
     if resultadoProducto == "flights":
-        # tipoProducto = input("Ingresa el tipo de producto v: Vuelos, c: Autos, a: Actividades, h: Hoteles, d: T.Disney\n")
         tipoProducto = "v"
         patronTotalPasajeros = r"/(\d+)_adult/(\d+)_child/(\d+)_infant"
         resultadoTotalPasajeros = re.search(patronTotalPasajeros, url)
@@ -32,48 +32,45 @@ while nuevaConsulta:
             adulto = int(resultadoTotalPasajeros.group(1))
             niño = int(resultadoTotalPasajeros.group(2))
             infante = int(resultadoTotalPasajeros.group(3))
-        print("El Producto de la URL es: Vuelos\n")
+        print("El Producto de la URL es: Vuelos")
 
     elif resultadoProducto == "cars":
         tipoProducto = "c"
         adulto , niño , infante = 1 , 0 , 0
-        print("El Producto de la URL es: Autos\n")
+        print("El Producto de la URL es: Autos")
 
-    elif resultadoProducto == "activities":
+    elif resultadoProducto == "activities": # PENDIETE
         tipoProducto = "a"
-        patronTotalPasajeros = r"/(\d+)_adult/(\d+)_child/(\d+)_infant"
-        resultadoTotalPasajeros = re.search(patronTotalPasajeros, url)
-        # Extraer los valores encontrados
-        if resultadoTotalPasajeros:
-            adulto = int(resultados.group(1))
-            niño = int(resultados.group(2))
-            infante = int(resultados.group(3))
-        print("El Producto de la URL es: Actividades\n")
+        adulto = int(input("Agrega la cantidad de pasajeros: "))
+        niño = 0
+        infante = 0
+        print("El Producto de la URL es: Actividades")
 
     elif resultadoProducto == "hotels":
         tipoProducto = "h"
-        patronTotalPasajeros = r"/(\d+)_adult/(\d+)_child/(\d+)_infant"
+        patronTotalPasajeros = r"/(\d+)-adults_(\d+)-children"
         resultadoTotalPasajeros = re.search(patronTotalPasajeros, url)
         # Extraer los valores encontrados
         if resultadoTotalPasajeros:
-            adulto = int(resultados.group(1))
-            niño = int(resultados.group(2))
-            infante = int(resultados.group(3))
-        print("El Producto de la URL es: Hoteles\n")
+            adulto = int(resultadoTotalPasajeros.group(1))
+            niño = int(resultadoTotalPasajeros.group(2))
+            infante = 0
+        print("El Producto de la URL es: Hoteles")
 
     elif resultadoProducto == "disney":
         tipoProducto = "d"
-        patronTotalPasajeros = r"/(\d+)_adult/(\d+)_child/(\d+)_infant"
+        patronTotalPasajeros = r"/(\d+)-adults/(\d+)-children/"
         resultadoTotalPasajeros = re.search(patronTotalPasajeros, url)
         # Extraer los valores encontrados
         if resultadoTotalPasajeros:
-            adulto = int(resultados.group(1))
-            niño = int(resultados.group(2))
-            infante = int(resultados.group(3))
-        print("El Producto de la URL es: Disney\n")
+            adulto = int(resultadoTotalPasajeros.group(1))
+            niño = int(resultadoTotalPasajeros.group(2))
+            infante = 0
+        print("El Producto de la URL es: Disney")
 
     cantidadPasajeros = adulto + niño + infante
     print(f"La cantidad de pasajeros es de {cantidadPasajeros}")
+    print("------------------------------\n")
 
     nombre_archivo = "./pasajeros.xlsx"
     libro_trabajo = load_workbook(nombre_archivo)
