@@ -1,4 +1,3 @@
-
 # Script para generar DOM JS para Promerica
 from openpyxl import load_workbook
 import re
@@ -7,7 +6,7 @@ import subprocess
 import os
 
 print("\n****************************************************************************************************")
-print("Este programa genera Script para introducirlo en el CheckOut, recuerda cerrar todos los archivos:\n pasajeros.xlsx y mensajes.txt")
+print("Este programa genera Script para introducirlo en el CheckOut para Promerica\nRecuerda cerrar todos los archivos:\nPasajeros.xlsx y mensajes.txt")
 print("****************************************************************************************************")
 nuevaConsulta = True
 while nuevaConsulta:
