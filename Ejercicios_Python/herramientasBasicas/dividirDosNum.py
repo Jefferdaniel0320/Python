@@ -1,5 +1,5 @@
 # Este programa calcula la división de dos numeros sin utilizar los simbolos de Multiplicación y División
-
+from decimal import Decimal
 bandera = True
 validacion = 'n'
 
@@ -14,14 +14,14 @@ while bandera:
         
         if x < y:
             contador = 0
-            contador2 = 0.1
+            contador2 = Decimal('0.1')
             for i in range(9):
                 x += valorDividendo
             while x > y:
                 x -= y
-                contador2 += 0.1
+                contador2 += Decimal('0.1')
             if y > x:
-                contador -=0.1
+                contador2 -=Decimal('0.1')
 
         elif x % y == 0:
             while x > y:
