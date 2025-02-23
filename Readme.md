@@ -5,4 +5,4 @@
 # Resumen
 En este Proyecto se tienen ejercicios de Python de los cursos que se han visto en diferentes plataformas.
 
-En construcción...
+En construcción... 23/02/25
